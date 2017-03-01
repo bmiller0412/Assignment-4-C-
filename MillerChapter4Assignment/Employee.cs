@@ -19,14 +19,13 @@ namespace MillerChapter4Assignment
         public const double SocialSecurity = 0.06;
         public decimal TotalSales { get; set; }
         /// <summary>
-        /// => for CommissionTotal means get only 
+        /// => for CommissionTotal means get only
         /// </summary>
         public decimal CommissionTotal => TotalSales * (decimal) Commission;
-        public decimal FederalTotal { get; set; }
-        public decimal RetireTotal { get; set; }
-        public decimal SocialSecurityTotal { get; set; }
-        public decimal MoneyOut { get; set; }
-        public decimal TakenPay { get; set; }
+        public decimal FederalTotal => TotalSales * (decimal) FederalTax;
+        public decimal RetireTotal => TotalSales * (decimal) Retirement;
+        public decimal SocialSecurityTotal => TotalSales * (decimal) SocialSecurity;
+        public decimal MoneyOut => RetireTotal + FederalTotal + SocialSecurityTotal;
         public string EmployeeName { get; set; }
 
         //Default Constructor
@@ -34,34 +33,18 @@ namespace MillerChapter4Assignment
         {
         }
 
-        //Get Total Pay
-        public decimal GetCommissionTotal() => TotalSales * (decimal) Commission;
-       
-        //Federal Taxes
-        public decimal GetFederalTaxes() => TotalSales * (decimal)FederalTax;
 
-        //Retirement Investments
-        public decimal GetRetirement() => TotalSales * (decimal) Retirement;
-
-        //Social Security
-        public decimal GetSocialSecurity() => TotalSales * (decimal)SocialSecurity;
-
-        //Money Taken Out
-        public decimal GetMoneyOut() => RetireTotal + FederalTotal + SocialSecurityTotal;
-
-        //Take Home Pay
-        public decimal GetTakenPay() => TotalSales = MoneyOut;
         //Override string
         public override string ToString()
         {
             StringBuilder stringbuilder = new StringBuilder();
             stringbuilder.AppendLine($"Employee: {EmployeeName}");
             stringbuilder.AppendLine($"Total Sale: {TotalSales}");
-            stringbuilder.AppendLine($"")
-            return
-                string.Format(
-                    "Employee: {0} \nTotal Sales: {1} \nCommission: {2} \nFederal Tax: {3} \nRetirement: {4} \nSocial Security: {5} \nTake Home: {6}",
-                    EmployeeName, TotalSales, CommissionTotal, FederalTotal, RetireTotal, SocialSecurityTotal);
+            stringbuilder.AppendLine($"Commission: {CommissionTotal}");
+            stringbuilder.AppendLine($"Federal Tax: {FederalTotal}");
+            stringbuilder.AppendLine($"Retirement: {RetireTotal}");
+            stringbuilder.AppendLine($"Social Security: {SocialSecurityTotal}");
+            return stringbuilder.ToString();
         }
     }
 }

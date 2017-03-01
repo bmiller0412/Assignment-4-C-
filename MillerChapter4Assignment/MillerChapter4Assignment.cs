@@ -20,7 +20,6 @@ namespace MillerChapter4Assignment
             Console.WriteLine("\nRetirement: {0}", employeeOne.RetireTotal);
             Console.WriteLine("\nSocial Security: {0}", employeeOne.SocialSecurityTotal); 
             Console.WriteLine("\nAmount Taken Out: {0}", employeeOne.MoneyOut);
-            Console.WriteLine("\nTaken Pay: {0}", employeeOne.TakenPay);
             Console.ReadKey();
         }
     }
