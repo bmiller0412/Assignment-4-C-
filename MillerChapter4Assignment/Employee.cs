@@ -7,16 +7,21 @@ using System.Threading.Tasks;
 
 namespace MillerChapter4Assignment
 {
-    //Class Created
+    /// <summary>
+    /// Class Created
+    /// </summary>
     public class Employee
     {
         //Variables Declared
-        public decimal Commission { get; set; } = 0.07M;
-        public decimal FederalTax { get; set; } = 0.18M;
-        public decimal Retirement { get; set; } = 0.10M;
-        public decimal SocialSecurity { get; set; } = 0.06M;
+        public const double Commission = 0.07;
+        public const double FederalTax = 0.18;
+        public const double Retirement = 0.10;
+        public const double SocialSecurity = 0.06;
         public decimal TotalSales { get; set; }
-        public decimal CommissionTotal { get; set; }
+        /// <summary>
+        /// => for CommissionTotal means get only 
+        /// </summary>
+        public decimal CommissionTotal => TotalSales * (decimal) Commission;
         public decimal FederalTotal { get; set; }
         public decimal RetireTotal { get; set; }
         public decimal SocialSecurityTotal { get; set; }
@@ -49,6 +54,10 @@ namespace MillerChapter4Assignment
         //Override string
         public override string ToString()
         {
+            StringBuilder stringbuilder = new StringBuilder();
+            stringbuilder.AppendLine($"Employee: {EmployeeName}");
+            stringbuilder.AppendLine($"Total Sale: {TotalSales}");
+            stringbuilder.AppendLine($"")
             return
                 string.Format(
                     "Employee: {0} \nTotal Sales: {1} \nCommission: {2} \nFederal Tax: {3} \nRetirement: {4} \nSocial Security: {5} \nTake Home: {6}",
