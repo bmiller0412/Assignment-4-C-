@@ -10,10 +10,10 @@ namespace MillerChapter4Assignment
     public class Employee
     {
         //Variables Declared
-        public decimal Commission = 0.07M;
-        public decimal FederalTax = 0.18M;
-        public decimal Retirement = 0.10M;
-        public decimal SocialSecurity = 0.06M;
+        public decimal commission = 0.07M;
+        public decimal federalTax = 0.18M;
+        public decimal retirement = 0.10M;
+        public decimal socialSecurity = 0.06M;
         public decimal totalSales;
         public decimal commissionTotal;
         public decimal federalTotal;
