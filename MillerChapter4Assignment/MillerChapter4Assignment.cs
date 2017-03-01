@@ -10,11 +10,14 @@ namespace MillerChapter4Assignment
     {
         static void Main(string[] args)
         {
+
+
             Console.WriteLine("Enter employee name: ");
             string employeeName = Console.ReadLine();
             Console.WriteLine("Total Sales: ");
             decimal totalSales = Convert.ToDecimal(Console.ReadLine());
             Employee employeeOne = new Employee();
+            employeeOne.TotalSales = totalSales;
             Console.WriteLine("\nAmount on Commission: {0}", employeeOne.CommissionTotal);
             Console.WriteLine("\nFederal Tax: {0}", employeeOne.FederalTotal);
             Console.WriteLine("\nRetirement: {0}", employeeOne.RetireTotal);
